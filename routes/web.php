@@ -16,8 +16,12 @@ use App\Http\Controllers\PageController;
 
 Route::get('/', [PageController::class, 'home']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::prefix('admin')->middleware(['auth'])->group(function () {
+
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+});
 
 require __DIR__ . '/auth.php';
