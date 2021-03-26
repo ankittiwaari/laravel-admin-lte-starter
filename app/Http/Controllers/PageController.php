@@ -29,7 +29,7 @@ class PageController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pages.create');
     }
 
     /**
@@ -40,7 +40,11 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        echo '<pre>';
+        print_r($request->all());
+        echo '</pre>';
+        die;
     }
 
     /**

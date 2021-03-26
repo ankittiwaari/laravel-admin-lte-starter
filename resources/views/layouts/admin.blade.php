@@ -82,11 +82,6 @@
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
-        <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-        All rights reserved.
-        <div class="float-right d-none d-sm-inline-block">
-            <b>Version</b> 3.1.0
-        </div>
     </footer>
 
     <!-- Control Sidebar -->
@@ -111,9 +106,6 @@
 <script src="{{ asset('js/Chart.min.js')}}"></script>
 <!-- Sparkline -->
 <script src="{{ asset('js/sparkline.js')}}"></script>
-<!-- JQVMap -->
-<script src="{{ asset('js/jquery.vmap.min.js')}}"></script>
-<script src="{{ asset('js/maps/jquery.vmap.usa.js')}}"></script>
 <!-- jQuery Knob Chart -->
 <script src="{{ asset('js/jquery.knob.min.js') }}"></script>
 <!-- daterangepicker -->
@@ -131,5 +123,6 @@
 <script src="{{ asset('js/demo.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('js/dashboard.js') }}"></script>
+@stack('scripts')
 </body>
 </html>
