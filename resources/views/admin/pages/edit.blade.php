@@ -5,6 +5,11 @@
     <section class="content">
         <div class="row">
             <div class="col-12">
+                @if (session('status'))
+                    <div class="alert alert-warning">
+                        {{ session('status') }}
+                    </div>
+                @endif
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -14,17 +19,18 @@
                         </ul>
                     </div>
                 @endif
-                <form action="/admin/page" method="POST">
+                <form action="/admin/page/{{$page->id}}" method="POST">
                     @csrf
+                    @method('PUT')
                     <div class="form-group">
                         <label for="title">Title</label>
                         <input type="text" id="title" name="title" maxlength="255" class="form-control"
-                               value="{{old('title')}}"/>
+                               value="{{old('title', $page->title)}}"/>
                     </div>
                     <div class="form-group">
                         <label for="summernote">Content</label>
                         <textarea id="summernote" name="page_content"
-                                  value="{{old('page_content')}}">{{old('page_content')}}</textarea>
+                                  value="{{old('page_content', $page->content)}}">{{old('page_content', $page->content)}}</textarea>
                     </div>
 
                     <button class="btn btn-sm btn-success">Save</button>

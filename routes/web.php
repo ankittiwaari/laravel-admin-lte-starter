@@ -16,6 +16,7 @@ use App\Http\Controllers\PageController;
 
 Route::get('/', [PageController::class, 'home']);
 
+
 Route::prefix('admin')->middleware(['auth'])->group(function () {
 
     Route::get('/dashboard', function () {
@@ -25,3 +26,6 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 });
 
 require __DIR__ . '/auth.php';
+
+// last route to display pages by slug
+Route::get('/{slug}', [PageController::class, 'show']);
