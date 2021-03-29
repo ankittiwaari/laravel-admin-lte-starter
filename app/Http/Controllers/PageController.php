@@ -23,8 +23,8 @@ class PageController extends Controller
     public function index()
     {
         $pages = Page::orderBy('title')
-            ->take(10)
-            ->get();;
+            ->paginate(10);
+
         return view('admin.pages.index', [
             'pages' => $pages
         ]);

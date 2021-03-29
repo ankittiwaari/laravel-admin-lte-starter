@@ -1,0 +1,17 @@
+.action-links a {
+    font-size: 0.8rem;
+}
+
+.action-links a::after {
+    content: "";
+    border-left: 1px solid #dee2e6;
+    margin-left: 3px;
+}
+
+.action-links .btn {
+    border: none;
+    padding: 0;
+}
+.pagination{
+    margin: 0;
+}

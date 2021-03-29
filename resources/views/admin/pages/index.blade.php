@@ -37,10 +37,10 @@
                                 <tr>
                                     <td>{{$loop->iteration}}</td>
                                     <td>{{$page->title}}</td>
-                                    <td>{{$page->user_id}}</td>
-                                    <td>{{\Illuminate\Support\Str::words(strip_tags($page->content))}}</td>
-                                    <td class="action-links"><a href="/admin/page/{{$page->id}}/edit">Edit</a> | <a
-                                            href="{{url($page->slug)}}">View </a>|
+                                    <td>{{$page->user->name}}</td>
+                                    <td>{{\Illuminate\Support\Str::words(strip_tags($page->content), 15)}}</td>
+                                    <td class="action-links"><a href="/admin/page/{{$page->id}}/edit">Edit</a>
+                                        <a href="{{url($page->slug)}}">View</a>
                                         <form method="post" class="d-inline-block"
                                               action="/admin/page/{{$page->id}}">
                                             @csrf
@@ -57,6 +57,11 @@
                         </table>
                     </div>
                     <!-- /.card-body -->
+                    @if($pages->hasPages())
+                        <div class="card-footer">
+                            {{$pages->links()}}
+                        </div>
+                    @endif
                 </div>
                 <!-- /.card -->
             </div>

@@ -20,6 +20,7 @@
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{{ asset('css/OverlayScrollbars.min.css')}}">
     <link rel="stylesheet" href="{{ asset('css/summernote-bs4.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/theme.css')}}">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
