@@ -12,6 +12,11 @@
     border: none;
     padding: 0;
 }
-.pagination{
+
+.pagination {
     margin: 0;
+}
+
+.preloader {
+    top: -10px;
 }
